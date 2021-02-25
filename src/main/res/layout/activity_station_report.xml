@@ -1,0 +1,2976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DepartmentAndDIY.StationReportActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/picking_line"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="日期 : "
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/date_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="#F5F5F5"
+                        android:gravity="center"
+                        android:onClick="showDatePickerDialog"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/check_count_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/store_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="通路 : "
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <Spinner
+                        android:id="@+id/type_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5F5"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店別 : "
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                    <Spinner
+                        android:id="@+id/store_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5F5"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/picking_line">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:text="Q1. 今日談了幾組 ?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                    <Spinner
+                        android:id="@+id/count_spinner"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="#F5F5F5"
+                        android:textAlignment="textEnd"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:text="Q2. 今日業績 ?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/day_performance_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center"
+                        android:hint="*金額"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>
+
+                        <!--<Spinner
+                            android:id="@+id/category_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>-->
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt1"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt1"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner2"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt2"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt2"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner3"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner3"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt3"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt3"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner4"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner4"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt4"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt4"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner5"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner5"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt5"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt5"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="6"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner6"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner6"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt6"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt6"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="7"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner7"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner7"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt7"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt7"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="8"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner8"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner8"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt8"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt8"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt8"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="9"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner9"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner9"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt9"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt9"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner10"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner10"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt10"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt10"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="11"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner11"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner11"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt11"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt11"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner12"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner12"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt12"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt12"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt12"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="13"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner13"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner13"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt13"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt13"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt13"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="14"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner14"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner14"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt14"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt14"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="15"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner15"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner15"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt15"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt15"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="16"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner16"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner16"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt16"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt16"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="17"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner17"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner17"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt17"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt17"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt17"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="18"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner18"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner18"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt18"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt18"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt18"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="19"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner19"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner19"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt19"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt19"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_txt19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="新增下一筆"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/device_llt20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/shape_line_dash"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
+                            android:text="Q3. 銷售何機種 ? 濾芯?"
+                            android:textColor="#F5F5F5"
+                            android:textSize="18sp"/>-->
+
+                        <Spinner
+                            android:id="@+id/category_spinner20"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/supplies_spinner20"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="#F5F5F5"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/count_edt20"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="*數量"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                        <EditText
+                            android:id="@+id/money_edt20"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="*金額"
+                            android:textColor="#F5F5F5"
+                            android:textColorHint="#F5F5F5"
+                            android:textSize="18sp"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Q4. 退貨數量 ? 金額?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/return_count_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="數量"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp"
+                        android:inputType="number"/>
+
+                    <EditText
+                        android:id="@+id/return_money_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:hint="金額"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp"
+                        android:inputType="number"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Q5. 未成交的原因?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/reason_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:hint="原因說明"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:text="Q6. 目前手上有幾組客戶 ?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                    <Spinner
+                        android:id="@+id/quantity_spinner"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:background="#F5F5F5"
+                        android:textAlignment="textEnd"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Q7. 有無其他問題須反應?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/response_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:hint="問題說明"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Q8. 本月累積總業績?"
+                        android:textColor="#F5F5F5"
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/month_performance_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center"
+                        android:hint="金額"
+                        android:textColor="#F5F5F5"
+                        android:textColorHint="#F5F5F5"
+                        android:textSize="18sp"
+                        android:inputType="number"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Album.MatchParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/picking_line">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/shape_line_dash"
+                    android:gravity="center"
+                    android:text="訂單照片上傳"
+                    android:textColor="#F5F5F5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:id="@+id/preview_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/picking_button"
+                        android:text="預覽"
+                        android:textColor="#F5F5F5"
+                        android:textSize="20sp"/>
+
+                    <Button
+                        android:id="@+id/choice_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/picking_button"
+                        android:text="選擇"
+                        android:textColor="#F5F5F5"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+                <include layout="@layout/activity_list_content"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/upload_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/picking_button"
+                android:text="上傳"
+                android:textColor="#F5F5F5"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

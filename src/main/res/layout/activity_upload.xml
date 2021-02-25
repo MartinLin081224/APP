@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="560dp"
+    android:orientation="vertical"
+    tools:context="com.example.a10609516.app.DepartmentAndDIY.UploadActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.a10609516.app.DepartmentAndDIY.UploadActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="346dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_weight="0.58"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/titletextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:gravity="center"
+                    android:text="日報填寫"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="346dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+                <TextView
+                    android:id="@+id/storetextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/typespinner"
+                    android:layout_width="240dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5
+" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:layout_width="346dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+                <TextView
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/storespinner"
+                    android:layout_width="240dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.26"
+                    android:background="#F5F5F5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout14"
+                android:layout_width="346dp"
+                android:layout_height="83dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+
+                <TextView
+                    android:id="@+id/warningtextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="退貨請打負數金額" />
+
+                <Button
+                    android:id="@+id/savebutton"
+                    android:layout_width="123dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/button"
+                    android:text="存檔"
+                    android:textColor="#0000ff"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="52dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout15"
+                android:layout_width="346dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/titleline"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+                <TextView
+                    android:id="@+id/numbertextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.11"
+                    android:background="@drawable/titleline"
+                    android:gravity="center"
+                    android:text="序號"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/itemtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/titleline"
+                    android:gravity="center"
+                    android:text="購買項目"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout16"
+                android:layout_width="346dp"
+                android:layout_height="2000dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/underline"
+                android:orientation="vertical"
+                android:weightSum="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
+
+                <TextView
+                    android:id="@+id/titletextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     1.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView1"
+                    android:layout_width="287dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     2.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     3.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     4.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     5.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     6.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     7.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     8.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     9.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/titletextView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="   10.                                      品號"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/itemeditText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress" />
+
+                <TextView
+                    android:id="@+id/numbertextView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="購買數量"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/numbereditText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/moneytextView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:text="銷售金額"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/moneyeditText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:ems="10"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout17"
+                android:layout_width="346dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/warningline"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout16">
+
+                <TextView
+                    android:id="@+id/directiontextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:text="使用說明\n"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/detailtextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1.進入專櫃或通路時，請先行定位打卡於1公里內。\n2.有打卡商品時，就須於當日完成已賣之商品。\n3.預購商品，可以填寫單據拍照上傳照片，每日於下午17:00止，管理部會於下班前回覆上傳照片內容。" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout18"
+                android:layout_width="346dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout17">
+
+                <TextView
+                    android:id="@+id/warningtextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="公司系統資訊 請勿外流於非他人使用與查詢" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/go_top_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end|bottom"
+            android:layout_weight="0.33"
+            android:clickable="true"
+            android:onClick="GoTopBtn"
+            app:backgroundTint="#E0FFFF"
+            app:fabSize="auto"
+            app:srcCompat="@drawable/btn_backtotop"
+            app:maxImageSize="48dp"
+            app:fabCustomSize="60dp"
+            android:scaleType="centerInside"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

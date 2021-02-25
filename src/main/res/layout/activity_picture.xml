@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a10609516.app.DepartmentAndDIY.PictureActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/store_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="分店 :"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/store_txt" />
+
+            <Spinner
+                android:id="@+id/store"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/type"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/store_txt"
+                android:background="#F5F5F5" />
+
+            <TextView
+                android:id="@+id/customer_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/store"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="客戶姓名 :"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/customer_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/store"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/customer_txt"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/phone_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/customer_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="聯絡電話 :"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/phone_edt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/customer_edt"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/phone_txt"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/address_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/phone_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="地址 :"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/address_edt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/phone_edt"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/address_txt"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textPostalAddress" />
+
+            <TextView
+                android:id="@+id/note_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/address_txt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="備註:"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/note_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/pen"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:layout_alignTop="@+id/note_txt"
+                android:layout_toRightOf="@+id/note_txt"
+                android:layout_toEndOf="@+id/note_txt" />
+
+            <TextView
+                android:id="@+id/upload_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/note_edt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="照片上傳:"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/upload_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/note_edt"
+                android:layout_toRightOf="@+id/upload_txt"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/button"
+                android:drawableRight="@drawable/picture"
+                android:text="選擇檔案"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/camera_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/note_edt"
+                android:layout_toRightOf="@+id/upload_btn"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/button"
+                android:drawableRight="@drawable/picture"
+                android:text="開啟相機"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/upload_llt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/upload_btn"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/upload_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:color/transparent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/direction_llt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_llt"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/warningline"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/save_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/button"
+                    android:text="上傳存檔"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/direction_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="使用說明"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/detail_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="1.進入專櫃或通路時，請先行定位打卡於1公里內。\n2.有打卡商品時，就須於當日完成已賣之商品。\n3.預購商品，可以填寫單據拍照上傳照片，每日於下午17:00止，管理部會於下班前回覆上傳照片內容。" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/warning_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_below="@+id/direction_llt"
+                android:text="公司系統資訊 請勿外流於非他人使用與查詢"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

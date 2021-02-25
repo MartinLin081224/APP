@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.a10609516.app.DepartmentAndDIY.RecordActivity">
+
+        <TextView
+            android:id="@+id/record_textView"
+            android:layout_width="360dp"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:text="七日內上傳日報紀錄"
+            android:textColor="@color/colorAccent"
+            android:textSize="30dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date_textView"
+            android:layout_width="340dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/titleline"
+            android:gravity="center_vertical"
+            android:text="  日期"
+            android:textColor="@color/colorAccent"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/record_textView" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="340dp"
+            android:layout_height="250dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/underline"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_textView">
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView1"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView1"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView1"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="0"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView2"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView2"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView2"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="8"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView3"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView3"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView3"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="12"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView4"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView4"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView4"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="11"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView5"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView5"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView5"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="100"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView6"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView6"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView6"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="98"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/time_textView7"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="店名:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/store_textView7"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_column="2"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="33dp"
+                    android:layout_height="35dp"
+                    android:layout_column="3"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:text="筆數:"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/count_textView7"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_column="4"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="77"
+                    android:textColor="@color/colorAccent" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/warningline"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+
+            <TextView
+                android:id="@+id/directiontextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="使用說明\n"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/detailtextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1.進入專櫃或通路時，請先行定位打卡於1公里內。\n2.有打卡商品時，就須於當日完成已賣之商品。\n3.預購商品，可以填寫單據拍照上傳照片，每日於下午17:00止，管理部會於下班前回覆上傳照片內容。" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout24"
+            android:layout_width="340dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+            <TextView
+                android:id="@+id/warningtextView"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="公司系統資訊 請勿外流於非他人使用與查詢" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

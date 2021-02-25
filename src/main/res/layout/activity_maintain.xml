@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a10609516.app.Workers.MaintainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        tools:context="com.example.a10609516.myapplication.Workers.MaintainActivity">
+
+        <TextView
+            android:id="@+id/maintain_textView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="出勤維護"
+            android:textColor="#5E86C1"
+            android:textSize="22sp" />
+
+        <TableLayout
+            android:id="@+id/maintain_tablelayot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/titleline"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="派工類別"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/work_type_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="派工單號"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/svd_service_no_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="送貨客戶"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esv_note_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text="預約日期時段"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/time_period_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="派工地址"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esv_address_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:textIsSelectable="true"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="付款方式"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/cp_name_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_column="1"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="是否要收款"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <CheckBox
+                    android:id="@+id/is_get_money_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:text="收款"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="應收款金額"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esvd_is_money_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="任務說明"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esvd_booking_remark_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/have_get_money_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="是否已收款"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esvd_is_eng_money_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <CheckBox
+                    android:id="@+id/have_get_money_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:onClick="onCheckboxClicked"
+                    android:text="已收款"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/have_get_money_edt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="0.9"
+                    android:cursorVisible="false"
+                    android:gravity="center_vertical"
+                    android:hint="金額"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <CheckBox
+                    android:id="@+id/not_get_all_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:onClick="onCheckboxClicked"
+                    android:text="未收齊"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/not_get_all_edt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="0.9"
+                    android:cursorVisible="false"
+                    android:gravity="center_vertical"
+                    android:hint="已收金額"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <CheckBox
+                    android:id="@+id/not_get_money_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:onClick="onCheckboxClicked"
+                    android:text="未收款"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <CheckBox
+                    android:id="@+id/credit_card_checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:text="已收款(信用卡)"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="抵達日期"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <Button
+                    android:id="@+id/arrive_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center"
+                    android:onClick="showDatePickerDialog"
+                    android:text="年/月/日" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="抵達時間"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/arrive_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="離開時間"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/leave_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/reason_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="檢修主因"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/reason_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_column="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="無效派工"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/useless_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="0.9"
+                    android:background="#F5F5F5"
+                    android:gravity="center" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text="工作說明"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/esvd_remark_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.9"
+                    android:ems="10"
+                    android:inputType="textMultiLine" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:weightSum="1"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/my_on_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/esvd_eng_dpoints_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:visibility="visible" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/titleline">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="本次派工A點數 : "
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/esvd_a_points_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="0"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="本次派工B點數 : "
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/esvd_b_points_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="0"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="本次派工點數 : "
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/esvd_eng_points_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="本次派工獎金 : $"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/esvd_eng_money_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/qrcode_tablelayot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/titleline"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="4"
+                    android:gravity="center_vertical"
+                    android:paddingTop="4dp"
+                    android:text="設備/耗材"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/add_qrcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:onClick="scanCode"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/qr_code" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/check_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/check_button"
+                android:text="OK"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/check_button"
+                android:layout_weight="0.5"
+                android:background="@drawable/cancel_button"
+                android:text="取消"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.a10609516.app.Workers.GPSActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/gps_scv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.a10609516.myapplication.Workers.GPSActivity">
+
+            <LinearLayout
+                android:id="@+id/gps_search_llt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/part_line2"
+                android:orientation="vertical"
+                android:weightSum="1"
+                app:layout_constraintHorizontal_bias="0.518"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="GPS位置打卡查詢"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/start_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.001"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:text="開始日期:"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/start_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="3"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:background="#F5F5F5"
+                        android:gravity="center"
+                        android:onClick="showDatePickerDialog"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/clean_btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toEndOf="@+id/start2"
+                        android:layout_toRightOf="@+id/start2"
+                        android:background="#F5F5F5"
+                        android:gravity="center"
+                        android:text="X" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/end_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.001"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:text="結束日期:"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/end_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="3"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:background="#F5F5F5"
+                        android:gravity="center"
+                        android:onClick="showDatePickerDialog"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/clean_btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toEndOf="@+id/end2"
+                        android:layout_toRightOf="@+id/end2"
+                        android:background="#F5F5F5"
+                        android:gravity="center"
+                        android:text="X" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.72"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/eng_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:text="工務姓名:"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/eng_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="20dp"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/search_btn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.05"
+                    android:background="@drawable/button"
+                    android:text="查詢"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gps_llt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:background="@drawable/part_line1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gps_search_llt">
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="end|bottom">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/go_top_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="5dp"
+                android:alpha="0.6"
+                android:clickable="true"
+                android:onClick="GoTopBtn"
+                app:backgroundTint="#FFFF4D"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/btn_backtotop"
+                app:maxImageSize="48dp"
+                app:fabCustomSize="60dp"
+                android:scaleType="centerInside"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/go_down_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:alpha="0.6"
+                android:clickable="true"
+                android:onClick="GoDownBtn"
+                app:backgroundTint="#FFFF4D"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/btn_gotodown"
+                app:maxImageSize="48dp"
+                app:fabCustomSize="60dp"
+                android:scaleType="centerInside"/>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

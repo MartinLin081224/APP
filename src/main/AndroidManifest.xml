@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.a10609516.app">
+    <!-- 加入允許應用訪問網路上的信息權限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 加入網路使用權限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 加入手機震動權限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 加入允許使用電源鎖定管理以使進程休眠或屏幕變暗 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 加入允許開機完成後發送ACTION_BOOT_COMPLETED的廣播信息 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 創建與刪除檔許可權 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" /> <!-- 寫入資料許可權 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 安裝未知來源的權限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" /> <!-- 加入相機開啟許可權 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 加入自動對焦功能 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 新增地圖元件的時候，自動加入的設定 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/wqp"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/wqp_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Tools.UsualActivity"></activity>
+        <activity
+            android:name=".Basic.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 共用區 -->
+        <activity
+            android:name=".Basic.MenuActivity"
+            android:label="首頁"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Basic.RequisitionActivity"
+            android:label="需求單"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Basic.RequisitionSearchActivity"
+            android:label="需求單查詢"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Basic.QRCodeActivity"
+            android:label="QRCode"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Basic.VersionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 總經理室 -->
+        <activity
+            android:name=".BOSS.ApplyExchangeActivity"
+            android:label="換貨申請單"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BOSS.ExchangeActivity"
+            android:label="換貨申請單"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 工務部 -->
+        <activity
+            android:name=".Workers.ScheduleActivity"
+            android:label="行程資訊"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.CalendarActivity"
+            android:label="派工行事曆"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.SearchActivity"
+            android:label="查詢派工資料"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Worker_SignatureActivity"
+            android:label="客戶電子簽名"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.MaintainActivity"
+            android:label="出勤回報"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.PointsActivity"
+            android:label="我的點數"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.MissCountActivity"
+            android:label="各區未回單數量"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.GPSActivity"
+            android:label="GPS打卡位置"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.EngPointsActivity"
+            android:label="工務點數明細"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.WorkersMapsActivity"
+            android:label="GOOGLE MAP"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Day_Schedule"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Week_Schedule"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Missing_Date"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Day_Work"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Week_Work"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Workers.Missing_Date_Record"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- DIY/百貨部 -->
+        <activity
+            android:name=".DepartmentAndDIY.PictureActivity"
+            android:label="客戶訂單照片上傳"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.CustomerActivity"
+            android:label="客戶訂單查詢"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.UploadActivity"
+            android:label="上傳日報"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.CorrectActivity"
+            android:label="日報修正"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.RecordActivity"
+            android:label="上傳日報紀錄"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.StationReportActivity"
+            android:label="日報上傳作業"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.StationReportSearchActivity"
+            android:label="日報查詢/修正"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.StationReportCorrectActivity"
+            android:label="日報明細修正"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.StationReportAddActivity"
+            android:label="日報明細新增"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DepartmentAndDIY.StationReportSearchManagerActivity"
+            android:label="日報查詢(主管用)"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 業務部 -->
+        <activity
+            android:name=".Clerk.QuotationActivity"
+            android:label="報價單查詢"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Clerk.AuthorizeActivity"
+            android:label="報價單審核"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 管理部 -->
+        <activity
+            android:name=".Manager.InventoryActivity"
+            android:label="盤點單"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Manager.OrderSearchActivity"
+            android:label="撿料單建立"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Manager.PickingActivity"
+            android:label="撿料單"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Manager.Picking_SignatureActivity"
+            android:label="撿料單電子簽名"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- Tools -->
+        <activity android:name=".Tools.BackKeyActivity" />
+        <activity android:name=".Tools.DatePickerFragment" />
+        <activity
+            android:name=".Tools.ScannerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- FCM推播 -->
+        <service android:name=".FCM.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FCM.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- 收到通知時, 到狀態列要顯示的 icon -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/bwt_icon" /> <!-- 收到通知的背景色 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" /> <!-- FileProvider安裝套件 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.a10609516.app.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- Google Service版本 -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Google Map API key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

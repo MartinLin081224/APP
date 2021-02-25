@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_item"
+        android:title="首頁" />
+    <item android:title="百貨/DIY通路部">
+        <menu>
+            <!--<item
+                android:id="@+id/record_item"
+                android:title="上傳日報紀錄(已停用)" />-->
+            <!--<item
+                android:id="@+id/picture_item"
+                android:title="客戶訂單照片上傳(已停用)" />
+            <item
+                android:id="@+id/customer_item"
+                android:title="客戶訂單查詢(已停用)" />-->
+            <!--<item
+                android:id="@+id/upload_item"
+                android:title="上傳日報(已停用)" />-->
+            <!--<item
+                android:id="@+id/correct_item"
+                android:title="日報修正(已停用)" />-->
+            <item
+                android:id="@+id/report_item"
+                android:title="日報上傳作業" />
+            <item
+                android:id="@+id/report_search_item"
+                android:title="日報查詢/修正" />
+            <item
+                android:id="@+id/report_search_manager_item"
+                android:title="日報查詢(主管用))" />
+        </menu>
+    </item>
+    <item android:title="資訊/行銷需求單">
+        <menu>
+            <item
+                android:id="@+id/requisition_item"
+                android:title="需求申請單" />
+            <item
+                android:id="@+id/progress_item"
+                android:title="進度查詢" />
+        </menu>
+    </item>
+    <!--<item
+        android:id="@+id/QRCode_item"
+        android:title="QRCode" />-->
+    <item
+        android:id="@+id/about_item"
+        android:title="版本資訊"/>
+
+</menu>

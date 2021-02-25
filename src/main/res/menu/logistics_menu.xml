@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_item"
+        android:title="首頁" />
+    <item android:title="管理部">
+        <menu>
+            <item
+                android:id="@+id/inventory_item"
+                android:title="盤點單" />
+            <!--<item
+                android:id="@+id/purchase_item"
+                android:title="倉庫進貨管理" />
+            <item
+                android:id="@+id/return_item"
+                android:title="倉庫調撥管理" />-->
+            <item
+                android:id="@+id/picking_item"
+                android:title="撿料單" />
+        </menu>
+    </item>
+    <item android:title="資訊/行銷需求單">
+        <menu>
+            <item
+                android:id="@+id/requisition_item"
+                android:title="需求申請單" />
+            <item
+                android:id="@+id/progress_item"
+                android:title="進度查詢" />
+        </menu>
+    </item>
+    <!--<item
+        android:id="@+id/QRCode_item"
+        android:title="QRCode" />-->
+    <!--<item
+        android:id="@+id/signature_item"
+        android:title="客戶電子簽名" />-->
+    <item
+        android:id="@+id/about_item"
+        android:title="版本資訊" />
+
+</menu>

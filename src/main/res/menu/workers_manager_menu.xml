@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_item"
+        android:title="首頁" />
+    <item android:title="工務部">
+        <menu>
+            <item
+                android:id="@+id/schedule_item"
+                android:title="行程資訊" />
+            <item
+                android:id="@+id/calendar_item"
+                android:title="派工行事曆" />
+            <item
+                android:id="@+id/work_item"
+                android:title="查詢派工資料" />
+            <item
+                android:id="@+id/points_item"
+                android:title="工務點數獎金查詢" />
+            <item
+                android:id="@+id/eng_points_item"
+                android:title="工務點數明細" />
+            <item
+                android:id="@+id/miss_item"
+                android:title="各區未回單數量" />
+            <item
+                android:id="@+id/map_item"
+                android:title="工務打卡GPS" />
+        </menu>
+    </item>
+    <item android:title="資訊/行銷需求單">
+        <menu>
+            <item
+                android:id="@+id/requisition_item"
+                android:title="需求申請單" />
+            <item
+                android:id="@+id/progress_item"
+                android:title="進度查詢" />
+        </menu>
+    </item>
+    <!--<item
+        android:id="@+id/QRCode_item"
+        android:title="QRCode" />-->
+    <item
+        android:id="@+id/about_item"
+        android:title="版本資訊" />
+
+</menu>

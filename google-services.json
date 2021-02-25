@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "991267642003",
+    "firebase_url": "https://wqp-water.firebaseio.com",
+    "project_id": "wqp-water",
+    "storage_bucket": "wqp-water.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991267642003:android:c9ffd6cbdac8f29a",
+        "android_client_info": {
+          "package_name": "com.example.a10609516.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991267642003-e17b6ij6ktgcsnbst0dn3p5q9e3ke016.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a10609516.app",
+            "certificate_hash": "67163a267917a71ccaf4217ae8d22510fdadbcd0"
+          }
+        },
+        {
+          "client_id": "991267642003-8tkncum85sug7a17ghhui8sl9gq176q4.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "991267642003-8tkncum85sug7a17ghhui8sl9gq176q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtWVjC9thQkaEcnOYEszG__JG3bQVLUt8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991267642003-8tkncum85sug7a17ghhui8sl9gq176q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

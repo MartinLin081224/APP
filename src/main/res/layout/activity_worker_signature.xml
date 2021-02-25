@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a10609516.app.Workers.Worker_SignatureActivity">
+
+    <FrameLayout
+        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.a10609516.app.Tools.WangGeView
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.example.a10609516.app.Tools.SignView
+            android:id="@+id/signView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.example.a10609516.app.Tools.SignView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/commit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/button"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="保存"/>
+
+        <Button
+            android:id="@+id/clear_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/cancel_button"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="清除" />
+
+    </LinearLayout>
+</RelativeLayout>
