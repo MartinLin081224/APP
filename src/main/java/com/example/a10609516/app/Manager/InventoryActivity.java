@@ -1127,4 +1127,5 @@ public class InventoryActivity extends WQPServiceActivity {
         }).start();
         Toast.makeText(this, "送出成功", Toast.LENGTH_SHORT).show();
     }
+
 }
